@@ -20,6 +20,82 @@
         public MouseState MouseState { get; set; }
 
         private MaterialTabControl _baseTabControl;
+        private int FIRST_TAB_PADDING = 80;
+        private int TAB_HEADER_PADDING = 24;
+        private int TAB_WIDTH_MIN = 160;
+        private int TAB_WIDTH_MAX = 264;
+
+        [Category("Material Skin"), Browsable(true)]
+        public int FirstTabPadding { 
+
+            get { return FIRST_TAB_PADDING; } 
+            set {
+                if (value <= 0)
+                {
+                    return;
+                } else
+                {
+                    FIRST_TAB_PADDING = value;
+                }
+            }
+        }
+
+        [Category("Material Skin"), Browsable(true)]
+        public int TabHeaderPadding
+        {
+
+            get { return TAB_HEADER_PADDING; }
+            set
+            {
+                if (value <= 0)
+                {
+                    return;
+                }
+                else
+                {
+                    TAB_HEADER_PADDING = value;
+                }
+            }
+        }
+
+
+        [Category("Material Skin"), Browsable(true)]
+        public int TabWidthMin
+        {
+
+            get { return TAB_WIDTH_MIN; }
+            set
+            {
+                if (value <= 0)
+                {
+                    return;
+                }
+                else
+                {
+                    TAB_WIDTH_MIN = value;
+                }
+            }
+        }
+
+
+        [Category("Material Skin"), Browsable(true)]
+        public int TabWidthMax
+        {
+
+            get { return TAB_WIDTH_MAX; }
+            set
+            {
+                if (value <= 0)
+                {
+                    return;
+                }
+                else
+                {
+                    TAB_WIDTH_MAX = value;
+                }
+            }
+        }
+
 
         [Category("Material Skin"), Browsable(true)]
         public MaterialTabControl BaseTabControl
@@ -62,10 +138,7 @@
         private List<Rectangle> _tabRects;
 
         private const int ICON_SIZE = 24;
-        private const int FIRST_TAB_PADDING = 80;
-        private const int TAB_HEADER_PADDING = 24;
-        private const int TAB_WIDTH_MIN = 160;
-        private const int TAB_WIDTH_MAX = 264;
+        
 
         private int _tab_over_index = -1;
 
